@@ -35,7 +35,7 @@ We provide frozen copies of those packages at the state they were in when this c
 Users should not have to worry about these packages, as the main package (GuestFarhadiCarney2026) handles these issues for you (see Installation below).
 
 # Installation and usage (paper code)
-The paper code (i.e., code needed to reproduce the analyses and figures reported in the paper) is all managed by this Julia package (GuestFarhadiCarney2024).
+The paper code (i.e., code needed to reproduce the analyses and figures reported in the paper) is all managed by this Julia package (GuestFarhadiCarney2026).
 Follow the instructions below to run the paper code (takes several hours to run).
 - Open the Julia REPL in this folder.
 - Press `[` in the REPL to activate the Pkg REPL.
@@ -53,7 +53,7 @@ Please follow the instructions below and reach out via email with any issues you
 
 ## C (model source)
 The local copy of the model source code lives at `./_pkg_model/src/model`.
-The permanent version is version controlled online at <https://github.com/guestdaniel/EfferentModelCarneyWrappers>.
+The permanent version is version controlled online in two repositories, <https://github.com/guestdaniel/EfferentModelCarneyC> and <https://github.com/guestdaniel/EfferentModelCarneyWrappers>.
 
 You will need to compile the model for your platform.
 The script `./_pkg_model/src/model/compile.sh` demonstrates how to do this using the GCC compiler.
@@ -61,7 +61,7 @@ Your tooling may vary slightly, but the goal is to compile `complex.c`, `sfie.c`
 Unlike the earlier variants of the (afferent) model, this model code has not seen many other users yet, and so it is expected that there will be some kinks to work out with compiling on different platforms — please reach out for assistance.
 
 ## Julia (model wrapper)
-Access to the model code is provided in Julia via a model wrapper package entitled "Helios" (placeholder name from Greek mythology).
+Access to the model code is provided in Julia via a model wrapper package entitled "Helios" (placeholder name).
 Helios is the package contained locally at `./_pkg_model`
 Follow the instructions contained therein to install and use the Helios package to run model responses.
 Once installed, invoking the package with `using Helios` in a Julia script will give you access to model wrapper functions like `sim_gfc2023`. 
@@ -70,9 +70,7 @@ Once installed, invoking the package with `using Helios` in a Julia script will 
 Access to the model code is provided in MATLAB via a model wrapper implemented in Mex.
 The local copy of the associated code is located at `./_pkg_model/src/mex`. 
 Follow the instructions contained therein to compile and use the Mex wrapper.
-Once compiled and added to your MATLAB path, you will have access to model wrapper functions like `???`. 
+Once compiled and added to your MATLAB path, you will have access to model wrapper functions like `sim_efferent_model`. 
 
 # Acknowledgements
-[[ TODO PUT FUNDING ]]
-
-# TODO
+This research was funded by NIH NIDCD R01-DC010813 (L.H.C.), NIH NIDCD F32-DC022143 (D.R.G.), and NIH NIDCD F32-DC022782 (A.F.).
