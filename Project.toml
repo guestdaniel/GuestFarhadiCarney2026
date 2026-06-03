@@ -4,6 +4,7 @@ version = "1.0.0"
 authors = ["Daniel Guest <daniel_guest@urmc.rochester.edu>"]
 
 [deps]
+ADTypes = "47edcb42-4c32-4615-8424-f2b9edc5f35b"
 AuditorySignalUtils = "20759599-9703-4078-b9af-37a489742e5c"
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
 CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
@@ -34,6 +35,7 @@ Helios = {path = "_pkg_model"}
 Utilities = {path = "_pkg_utils"}
 
 [compat]
+ADTypes = "1.22.0"
 CSV = "0.10.16"
 CairoMakie = "0.15.11"
 ColorSchemes = "3.31.0"

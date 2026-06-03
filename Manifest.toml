@@ -2,7 +2,7 @@
 
 julia_version = "1.12.2"
 manifest_format = "2.0"
-project_hash = "03ba5b4ffbea75fc03dc0179056685b258b4bd13"
+project_hash = "990d5c7231aa35b51563c320d00d2b1a4f28ffb2"
 
 [[deps.ADTypes]]
 git-tree-sha1 = "bbc22a9a08a0ef6460041086d8a7b27940ed4ffd"
@@ -961,7 +961,7 @@ uuid = "8710efd8-4ad6-11eb-33ea-2d5ceb25a41c"
 version = "2.2.2"
 
 [[deps.GuestFarhadiCarney2026]]
-deps = ["AuditorySignalUtils", "CSV", "CairoMakie", "ColorSchemes", "Colors", "DSP", "DataFrames", "DataFramesMeta", "Distributed", "Distributions", "DrWatson", "FFTW", "Helios", "Interpolations", "Loess", "Parameters", "ProgressMeter", "SkipNan", "Statistics", "StatsBase", "Utilities", "ZilanyBruceCarney2014"]
+deps = ["AuditorySignalUtils", "CSV", "CairoMakie", "ColorSchemes", "Colors", "DSP", "DataFrames", "DataFramesMeta", "Distributed", "Distributions", "DrWatson", "FFTW", "Helios", "Interpolations", "Loess", "Match", "Parameters", "ProgressMeter", "SkipNan", "Statistics", "StatsBase", "Utilities", "ZilanyBruceCarney2014"]
 path = "."
 uuid = "c17f66b7-7c23-4a73-8bb8-db216988f2ac"
 version = "1.0.0"
