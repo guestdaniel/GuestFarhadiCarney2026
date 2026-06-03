@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="110mm"
+   height="55mm"
+   viewBox="0 0 110 55"
+   version="1.1"
+   id="svg1170"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="fig_methods_rlfs.svg"
+   inkscape:export-filename="fig_methods_rlfs.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1172"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.6532575"
+     inkscape:cx="185.62088"
+     inkscape:cy="73.871458"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1167" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-6.8062739,-6.0718603)">
+    <image
+       width="47.811764"
+       height="40.639999"
+       preserveAspectRatio="none"
+       style="image-rendering:optimizeQuality"
+       xlink:href="fig_results_intro_rlf_clean.png"
+       id="image13970"
+       x="14.185567"
+       y="12.913964" />
+    <image
+       width="50.799999"
+       height="43.18"
+       preserveAspectRatio="none"
+       style="image-rendering:optimizeQuality"
+       xlink:href="fig_results_intro_rlf_shift.png"
+       id="image14362"
+       x="60.796421"
+       y="11.855631" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:0.9;font-family:arial;-inkscape-font-specification:arial;text-align:end;text-decoration-color:#000000;text-anchor:end;fill:#000000;stroke:none;stroke-width:0.12021;stop-color:#000000"
+       x="20.572985"
+       y="14.914138"
+       id="text7678-9"><tspan
+         sodipodi:role="line"
+         id="tspan7676-6"
+         style="font-size:4.23333px;fill:#000000;stroke:none;stroke-width:0.12021"
+         x="21.74914"
+         y="14.914138">A. </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:0.9;font-family:arial;-inkscape-font-specification:arial;text-align:end;text-decoration-color:#000000;text-anchor:end;fill:#000000;stroke:none;stroke-width:0.12021;stop-color:#000000"
+       x="69.866562"
+       y="14.965814"
+       id="text7678-9-5"><tspan
+         sodipodi:role="line"
+         id="tspan7676-6-1"
+         style="font-size:4.23333px;fill:#000000;stroke:none;stroke-width:0.12021"
+         x="71.042717"
+         y="14.965814">B. </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:0.9;font-family:arial;-inkscape-font-specification:arial;text-align:center;text-decoration-color:#000000;text-anchor:middle;fill:#808080;fill-opacity:1;stroke:#808080;stroke-width:0.25;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       x="41.679653"
+       y="17.03417"
+       id="text8789"><tspan
+         sodipodi:role="line"
+         id="tspan8787"
+         style="font-weight:normal;stroke:none;stroke-width:0.25"
+         x="41.679653"
+         y="17.03417">Dynamic range</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:0.9;font-family:arial;-inkscape-font-specification:arial;text-align:center;text-decoration-color:#000000;text-anchor:middle;fill:#808080;fill-opacity:1;stroke:#808080;stroke-width:0.25;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       x="54.4137"
+       y="25.268185"
+       id="text8789-2"><tspan
+         sodipodi:role="line"
+         id="tspan8787-0"
+         style="font-weight:normal;text-align:start;text-anchor:start;stroke:none;stroke-width:0.25"
+         x="54.4137"
+         y="25.268185">Rate </tspan><tspan
+         sodipodi:role="line"
+         style="font-weight:normal;text-align:start;text-anchor:start;stroke:none;stroke-width:0.25"
+         x="54.4137"
+         y="27.808191"
+         id="tspan8818">range</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:0.9;font-family:arial;-inkscape-font-specification:arial;text-align:start;text-decoration-color:#000000;text-anchor:start;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.25;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       x="39.656582"
+       y="38.93959"
+       id="text8822"><tspan
+         sodipodi:role="line"
+         id="tspan8820"
+         style="stroke-width:0.25"
+         x="39.656582"
+         y="38.93959">MP</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:0.9;font-family:arial;-inkscape-font-specification:arial;text-align:start;text-decoration-color:#000000;text-anchor:start;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.25;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       x="28.645885"
+       y="38.93959"
+       id="text8822-1"><tspan
+         sodipodi:role="line"
+         id="tspan8820-3"
+         style="stroke-width:0.25"
+         x="28.645885"
+         y="38.93959">TH</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:0.9;font-family:arial;-inkscape-font-specification:arial;text-align:start;text-decoration-color:#000000;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.25;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       x="45.962612"
+       y="76.228783"
+       id="text8914"
+       transform="rotate(-40.232276)"><tspan
+         sodipodi:role="line"
+         id="tspan8912"
+         style="fill:#000000;fill-opacity:1;stroke-width:0.25"
+         x="45.962612"
+         y="76.228783">RLF 1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:0.9;font-family:arial;-inkscape-font-specification:arial;text-align:start;text-decoration-color:#000000;text-anchor:start;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.25;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       x="43.006695"
+       y="86.684845"
+       id="text8914-6"
+       transform="rotate(-41.531072)"><tspan
+         sodipodi:role="line"
+         style="fill:#ff0000;fill-opacity:1;stroke-width:0.25"
+         x="43.006695"
+         y="86.684845"
+         id="tspan9390">RLF 2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:0.9;font-family:arial;-inkscape-font-specification:arial;text-align:start;text-decoration-color:#000000;text-anchor:start;fill:#808080;fill-opacity:1;stroke:#ff0000;stroke-width:0.25;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       x="92.055412"
+       y="26.011398"
+       id="text10697"><tspan
+         sodipodi:role="line"
+         id="tspan10695"
+         style="fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.25"
+         x="92.055412"
+         y="26.011398">ΔL</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;line-height:0.9;font-family:arial;-inkscape-font-specification:arial;text-align:start;text-decoration-color:#000000;text-anchor:start;fill:#808080;fill-opacity:1;stroke:#ff0000;stroke-width:0.25;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       x="83.038696"
+       y="33.677143"
+       id="text10697-3"><tspan
+         sodipodi:role="line"
+         id="tspan10695-7"
+         style="fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.25"
+         x="83.038696"
+         y="33.677143">ΔR</tspan></text>
+  </g>
+</svg>
