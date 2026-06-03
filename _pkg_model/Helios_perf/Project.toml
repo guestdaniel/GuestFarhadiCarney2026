@@ -1,0 +1,18 @@
+name = "Helios_perf"
+uuid = "8fc72b40-4682-4a52-9c4f-aaf743d3bd89"
+version = "0.1.0"
+authors = ["Daniel Guest <daniel_guest@urmc.rochester.edu>"]
+
+[deps]
+BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
+CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+Helios = "bd60d82c-a384-44fa-b544-3af1e39361be"
+
+[sources]
+Helios = {path = ".."}
+
+[compat]
+BenchmarkTools = "1.6.3"
+CairoMakie = "0.15.8"
+Dates = "1.11.0"

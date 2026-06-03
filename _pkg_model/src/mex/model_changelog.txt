@@ -1,0 +1,178 @@
+6.0 (8/25/2025)
+  - Revised the formulation of multi-channel gain-factor calculation. Previously, the system
+    was somewhat convoluted, incorporating an overall MOC weight with a channel-by-channel
+    "innervation factor" and a gain-mixing kernel; now, every channel has its own MOC weight
+    (so MOC weight is vector-valued) and gain factors are smoothed across CF using a 
+    log-frequency Gaussian smoothing kernel. The "innervation factor" system has been removed.
+    Parameter `moc_weight` is vector-valued but unused, parameters `moc_beta` and `moc_offset`
+    are now vector-valued and apply to the WDR pathway implicitly. The IC pathway is
+    effectively disabled for the time being and only the WDR pathway plays a role in 
+    efferent responses. 
+5.12 (1/7/2025)
+  - Updated PLA approximation parameters now that Guest and Carney (2024) JASA letter is 
+    published with n_process and parameters suggestions.
+5.11 (?/?/2024 to 1/7/2025)
+  - Several undocumented, experimental changes to determine how MOC internal parameters are
+    calculated (e.g., time-varying gain signal).
+  - Added `moc_innerv_factor` parameter that controls 'strength' of MOC innervation at each
+    CF location.
+  - These changes will be reconciled and updated for impending efferent model release in
+    upcoming v6.
+5.10 (5/21/2024)
+  - Added "moc_delay" to the parameters, which is a delay specified in seconds that is 
+    added between the final MOC gain factor and its resulting impact on BM responses.
+5.9 (5/21/2024)
+  - Exposed "dur_settle" as a parameter in the model function. See model documentation for 
+    details.
+5.8 (5/21/2024)
+  - Added a "settle duration" period during which no input is provided to the IC neurons and
+    responses to silence are simulated.
+5.7 (4/17/2024)
+  - Updated the powerlaw adaptation parameters. Previously, a set of parameters that were 
+    selected via optimization on the old 2014 model were being used, but it was subsequently
+    discovered that these parameters did not generalize perfectly to the efferent model. 
+    Here, the new parameter values are based on optimization with the efferent model (code
+    for this optimization is maintained separately in the FastPLA repository).
+5.6 (3/19/2024)
+  - Fixed a poor design choice that led to lots of wasted computation in larger multichannel 
+    simulations related to calculating distances between channel CFs
+  - Modified PLA approximation parameters to match newest versions as of mid-March and 
+    adjusted number of processes down to 40 from 100
+5.5 (2/19/2024)
+  - Modified calculation of IC SFIE time constants to match how it was handled in previous
+    "automatic BMF" versions of the SFIE code. Specifically, for CF channels with CF/4 < 64 Hz,
+    we the equations from the `SFIE_BE_BS_BMF` MATLAB function to set the IC parameters
+    to yield a BMF of CF/4, instead of 64 Hz.
+5.4 (11/13/2023)
+  - Modified the way that WDR-driven gain control is normalized with respect to the number of
+    contributing channels in the underlying simulation. Previously, gain-factor values from
+    different channels were combined via multiplication and then normalized by raising the
+    final value to the power of 1/n_cf_per_oct. This achieved normalization with respect to 
+    the "density" of CFs in the simulation, but changing the width of the WDR projections 
+    resulted in changes in the effective strength of WDR-driven gain control. To make it 
+    easier to explore the effects of WDR pathway width without confounding it with the 
+    overall strength of the WDR pathway, this normalization factor was altered to be
+    1/(n_cf_per_oct * moc_width_wdr), which means that WDR-driven gain-factor values
+    are now normalized with respect to the number of channels that contributed to the 
+    gain factor value. The final calculation can be understood as a geometric mean of all 
+    the contributing gain-factor values. If moc_width_wdr is set to zero, we disable this 
+    normalization scheme.
+5.3 (11/13/2023)
+  - Modified Cohc and Cihc to be vector-valued instead of scalar-valued. Each is now a 
+    vector of the same shape as the CF vector, so Cohc and Cihc can be different in each
+    channel. This change allows simulation of CF-dependent hearing loss.
+5.2 (11/06/2023)
+  - Refined PLA approximation parameters based on updated optimization scheme. The main 
+    change from previous versions is that the stimulus was much more challenging than a pure
+    tone and optimization was repeated many times with random initialization values and then
+    a single best fit was selected.
+5.1 (07/25/2023)
+  - Added approximate power-law adaptation. This approximation is based on using many parallel 
+    exponential adaptation processes with a wide range of time constants in lieu of the 
+    true power-law adaptation. These processes can be implemented efficiently as 
+    small recursive filters (single-pole IIR lowpass) and result in a model that is in 
+    linear time with respect to input length, whereas the true power-law adaptation 
+    superlinear in time. The approximation includes 100 parallel processes each for the slow
+    and fast power-law stages, and the range of time constants was fit empirically to 
+    match approximate to true output waveforms for the power-law stages in response to 
+    brief pure tones at various frequencies (this procedure will be improved in the future
+    to give better fits to a wider range of stimuli).
+4.3 (06/29/2023)
+  - Fixed bug related to calculation of MOC lowpass filter parameters
+4.2 (04/16/2023)
+  - Added arguments to control "fastmode" hacks. In the main model function, 
+    powerlaw_include_fast determines whether the fast power-law adaptation is included in
+    the model, and powerlaw_len_memory allows the user to limit the maximum memory length
+    of the power-law adaptation (in samples). In the wrapper function designed for use
+    with mex, we simply expose a fastmode switch that either runs the model without any
+    hacks (fastmode==0) or runs the model with the fast power law disabled and a maximum
+    power-law memory length of 5000 samples (fastmode==1)
+4.1 (03/31/2023)
+  - Modified MOC gain control stage in several ways
+  - Final gain value for each sample, which is in the range [0, 1], is now computed as the 
+    product of several individual gain control signals (also in range [0, 1]). These include
+    a single-channel IC-driven MOC signal as well as multiple WDR-driven MOC signals from
+    nearby channels. 
+  - Separated parameters for the MOC nonlinearity in the IC-driven path and the WDR-driven
+    path
+  - Provided a simplified model function to call that wraps the main model function 
+4.0 (03/16/2023)
+  - Added medial olivocochlear stage (MOC) to model --- MOC dynamically controls 
+    cochlear gain sample-by-sample
+  - Added lowpass filtering and input-output nonlinearity code for MOC 
+  - Modified calculation of some cochlear filtering parameters to pull them into the
+    main model loop and update them sample-by-sample based on feedback signals from MOC
+  - Fixed a bug in how auditory-nerve rates were being calculated
+3.0 (03/14/2023)
+  - Added subcortical stage after auditory periphery stage (implemented as two-stage
+    same-frequency inhibition-excitation [SFIE] model)
+  - Added code in sfie.c to implement basic SFIE filtering
+  - Modified main function signature, declarations/allocations to handle new subcortical 
+    model stage
+2.0 (03/14/2023)
+  - Added support for simultaneously simulating HSR/LSR responses, which resulted in 
+    several associated changes (described below)
+  - Hid both adaptation stages (Westerman and Smith / power law) in several functions
+    now defined in adaptation.c. These include an initialization function for 
+    Westerman and Smith adaptation and samplewise implementation functions for both 
+    types of adaptation
+  - Modified main model function signature, declarations and initializations, etc. to 
+    match new parallel signal flow in AN stage
+1.1 (03/08/2023)
+  - Cleaned up documentation in several functions and added some helpful comments to 
+    point to the right papers for various equations
+  - Removed meout, c1vihcout, c2vihcout from main function signature to reduce 
+    complexity of the code (and because those outputs are easily obtainable from other
+    outputs)
+  - Reordered function signature for main model function to put synout as the last 
+    argument (so that all outputs match signal flow)
+1.0 (03/07/2023)
+  - Converted all calculations, inputs, outputs, etc. to multichannel 
+  - Modified all functions using static arrays to preserve state across samples to use
+    instead state variables passed in and out of functions via pointers, so they can be 
+    dynamically sized at runtime based on the number of channels requested
+0.12
+  - Improved documentation for main function
+  - Cleaned up main function signature (eliminated noiseType, implnt, powerLawIn,
+    and decimate, since all are no longer relevant)
+  - Got rid of many unnecessary/redundant variables (especially loop indices)
+0.11
+  - Cleaned up a lot of minor formatting inconsistencies
+  - Removed variables that were unused from the code
+  - Tried to elimiate all if...else blocks that did not guarantee that variables were 
+    initialized to avoid unwanted surprises
+0.10
+  - Removed power-law zeropadding ("delaypoint") system 
+  - Moved power-law adaptation into primary loop 
+  - Renamed several variables related to the initial "traveling-wave delay" to improve 
+    clarity
+0.9
+  - Removed downsampling stage from the IHC/synapse model.
+0.8
+  - Moved double-exponential adaptation stage into main model loop.
+0.7
+  - Converted "traveling-wave delay" that accounts for differences in ANF spiking 
+    latency as a function of CF into a sample-wise implementation consisting of a 
+    short delay after middle-ear filtering and before cochlear filtering.
+0.6
+  - Removed logic related to `implnt`, which controls whether to use the actual or 
+    approximate implementation of power-law adaptation (note: left the argument in the 
+    signature of `model()` for convenience, but it now effectively does nothing)
+0.5
+  - Added additional model stages after IHC, up to synapse output
+0.4
+  - Adjusted formatting and comments in a few underlying C functions (NLogarithm, 
+    IhcLowPass, etc.)
+0.3
+  - Removed nrep as an option from the new model code... if users want to repeat 
+    simulations, they should pass in a repeated stimulus or repeat the call (instead 
+    of using the nrep functionality provided in 2014/2018 model code)
+0.2
+  - Implemented full IHC signal path into `model()`
+  - Adjusted code to allow the caller to get many time-varying outputs from different 
+    model stages as outputs so they can be inspected post hoc
+0.1
+  - Started process of merging IHCAN.c and Synapse.c, part of the original 2014 model 
+    code, into a single file, model.c. 
+  - Created a new function, `model()`, intended to implement both the BM/IHC and AN 
+    model stages into a single samplewise loop.

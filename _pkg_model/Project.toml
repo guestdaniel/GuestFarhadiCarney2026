@@ -1,0 +1,28 @@
+name = "Helios"
+uuid = "bd60d82c-a384-44fa-b544-3af1e39361be"
+version = "0.1.0"
+authors = ["Daniel Guest <guest121@umn.edu>"]
+
+[deps]
+AuditoryMidbrain = "1f0c5aff-cd3a-4ea8-abe2-b20da302f73b"
+AuditorySignalUtils = "20759599-9703-4078-b9af-37a489742e5c"
+BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
+ColorSchemes = "35d6a980-a343-548e-a6ea-1d62b119f2f4"
+DSP = "717857b8-e6f2-59f4-9121-6e50c889abd2"
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
+DrWatson = "634d3b9d-ee7a-5ddf-bec9-22491ea816e1"
+FFTW = "7a1cc6ca-52ef-59f5-83cd-3a7055c09341"
+Libdl = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
+Match = "7eb4fadd-790c-5f42-8a69-bfa0b872bfbf"
+Profile = "9abbd945-dff8-562f-b5e8-e1ebf5ef1b79"
+ProfileView = "c46f51b8-102a-5cf2-8d2c-8597cb0e0da7"
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+UnicodePlots = "b8865327-cd53-5732-bb35-84acbb429228"
+ZilanyBruceCarney2014 = "83795400-82fe-439b-8fdc-4e65948642a8"
+
+[sources]
+AuditoryMidbrain = {path = "C:\\Users\\dguest2\\AuditoryMidbrain.jl\\"}
+ZilanyBruceCarney2014 = {rev = "main", url = "https://github.com/guestdaniel/ZilanyBruceCarney2014.jl"}

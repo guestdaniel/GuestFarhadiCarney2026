@@ -1,0 +1,10 @@
+*.o
+*.so
+*.swp
+test.jl
+*.gcda
+*.gcno
+analysis_function.txt
+*.out
+*.gcov
+*.exe

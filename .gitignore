@@ -1,2 +1,8 @@
 *.png
 *.pdf
+*.mexw64
+*.o
+*.zip
+*.obj
+*.so
+*.asv
