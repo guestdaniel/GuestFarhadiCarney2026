@@ -1,7 +1,6 @@
 # Introduction
 This is the README file for "A computational model of the mammalian auditory periphery with a closed-loop medial olivocochlear reflex simulating across-channel efferent gain control" by Guest, Farhadi, and Carney (2026), published in JASA.
-This code repository contains the code necessary to reproduce the analyses and figures in the paper in the form of a Julia package.
-It also contains the underlying auditory-model code, allowing users to generate their own model responses to sound using MATLAB (via a Mex wrapper) or Julia (via a Julia package and `ccall`).
+This code repository focuses on replicating the figures and analyses from the paper; if you wish to use the model described in the article, instead navigate to <https://github.com/guestdaniel/EfferentModel_GuestFarhadiCarney2026>.
 
 Please direct questions and inquiries to <daniel_guest@urmc.rochester.edu>.
 
@@ -48,12 +47,16 @@ Follow the instructions below to run the paper code (takes several hours to run)
 The model code consists of two parts.
 First, the underlying model is implemented in several C files (model source).
 Second, the model can be accessed in higher-level languages (MATLAB, Julia) via convenient functions (model wrapper).
+
 Currently, the auditory efferent model described in the paper requires a little bit of manual work to get running.
+The instructions below should suffice for running this code to replicate figures and analyses from the paper.
+If you wish to use the model in your own work or explore its source code, instead navigate to <https://github.com/guestdaniel/EfferentModel_GuestFarhadiCarney2026>, where the up-to-date version of the model is maintained.
+
 Please follow the instructions below and reach out via email with any issues you encounter.
 
 ## C (model source)
 The local copy of the model source code lives at `./_pkg_model/src/model`.
-The permanent version is version controlled online in two repositories, <https://github.com/guestdaniel/EfferentModelCarneyC> and <https://github.com/guestdaniel/EfferentModelCarneyWrappers>.
+The permanent version is version controlled online in two repositories, <https://github.com/guestdaniel/EfferentModelCarneyC> and <https://github.com/guestdaniel/EfferentModel_GuestFarhadiCarney2026>.
 
 You will need to compile the model for your platform.
 The script `./_pkg_model/src/model/compile.sh` demonstrates how to do this using the GCC compiler.
